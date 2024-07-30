@@ -13,3 +13,113 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+  background-image: url("/assets/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
+  /* color: #333; */
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+main {
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  #card {
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    background-color: #fafafa;
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  #cardHeader {
+    padding-bottom: .5rem;
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+
+  #cardBody {
+    width: 100%;
+    overflow: auto;
+    padding: .5rem 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  #cardFooter {
+    border-top: 1px solid black;
+    padding-top: .5rem;
+    width: 100%;
+
+    a {
+      font-weight: bold;
+      color: rgb(132, 34, 34);
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: .5px solid gray;
+      padding: 1rem 0;
+
+      &:nth-child(even) {
+        color: rgb(2, 93, 2);
+        a {
+          color: rgb(2, 93, 2);
+        }
+      }
+
+      &:nth-child(odd) {
+        color: rgb(80, 3, 12);
+        a {
+          color: rgb(80, 3, 12);
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      i {
+        margin-right: .5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+
+<main>
+  <div class="container">
+    <article id="card">
+      <div id="cardHeader">
+        <h1>My tasks</h1>
+      </div>
+      <div id="cardBody">
+        <div>
+          <ul>
+            <% @tasks.each do |task| %>
+              <%if task.completed%>
+                <li>
+                  <div><i class="fa-regular fa-square-check"></i><%= link_to task.title, task_path(task)%></div>
+                  <%= link_to task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{task.title}"} do %>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <%end%>
+                </li>
+              <%else%>
+                <li>
+                  <div><i class="fa-regular fa-square"></i><%= link_to task.title, task_path(task)%></div>
+                  <%= link_to task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{task.title}"} do%>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <%end%>
+                </li>
+              <%end%>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div id="cardFooter">
+        <%=link_to "Create a new task", new_task_path%>
+      </div>
+    </article>
+  </div>
+</main>
